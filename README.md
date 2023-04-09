@@ -46,4 +46,5 @@ Users should be able to:
 - Mobile-first workflow
 - Javascript
 
+## Author
 - Frontend Mentor - [@jayAEY](https://www.frontendmentor.io/profile/jayAEY)
