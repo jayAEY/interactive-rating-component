@@ -3,215 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://kit.fontawesome.com/0147e98b97.js" crossorigin="anonymous"></script>
   <title>Interactive rating component</title>
-
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
-
-    *,
-    *::before
-    *::after {
-      box-sizing: border-box;
-      padding: 0;
-      margin: 0;
-    }
-
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      overflow: hidden;
-      font-family: 'Overpass', sans-serif;
-      font-size: 0.9rem;
-      background-color: hsl(216, 12%, 8%);
-      color: hsl(216, 12%, 54%);
-      line-height: 21px;
-    }
-
-    #rating-panel {
-      display: flex;
-      flex-direction: column;
-      background-color: hsl(213, 19%, 18%);
-      height: 300px;
-      width: 285px;
-      border-radius: 25px;
-      padding: 30px 30px;
-    }
-
-    #rating-state {
-      display: contents;
-    }
-
-    #rating-state h1 {
-      color: white;
-      margin-top: 30px;
-      margin-bottom: 0;
-    }
-
-    .circle {
-      appearance: none;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: hsl(212, 18%, 20%);
-      width: 46px;
-      height: 46px;
-      border-radius: 40px;
-      margin: 0;
-      padding: 0;
-    }
-    
-    #star {
-      height: 12px;
-      width: 12px;
-    }
-    
-    #ratings {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-
-    label {   
-      position: relative;
-      color: white;
-      transform: translate(23px,13.5px);
-      z-index: 1;
-      cursor: pointer;
-    }
-
-    label {
-      cursor: pointer;
-    }
-
-    input[type="radio"] {
-      position: relative;
-      display: inline-block;
-      transform: translate(-5px, 0px);
-    }
-
-    input[type="radio"]:hover {
-      color: white;
-      background-color: hsl(217, 12%, 63%);
-      cursor: pointer;
-    }
-
-    input[type="radio"]:checked{
-      background-color:  hsl(25, 97%, 53%);
-    }
-
-    #submit {
-      width: 100%;
-      height: 40px;
-      background-color: hsl(25, 97%, 53%);
-      color: white;
-      border-radius: 20px;
-      border: none;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      cursor: pointer;
-      transition: all 0.3s;
-    }
-
-    #submit:hover {
-      background-color: white;
-      color: hsl(25, 97%, 53%);
-    }
-
-    #thank-you-state {
-      display: none;
-      height: 100%;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      justify-content: space-between;
-    }
-
-    #thank-you-image {
-      width: 140px;
-      margin-top: 20px;
-    }
-
-    #rating-text {
-      color: hsl(25, 97%, 53%);
-      background-color: hsl(212, 18%, 20%);
-      padding: 7px 12px;
-      border-radius: 50px;
-      margin: 30px 0 25px 0;
-    }
-
-    #thank-you-state h1 {
-      color: white;
-      margin: 0;
-    }
-
-  </style>
 </head>
 <body>
-<main>  
-  <div id="rating-panel">
-    <div id="rating-state">
-      <div class="circle"><img alt="star-icon" id="star" src="./images/icon-star.svg"/></div>
-      <h1>How did we do?</h1>
-      <p> Please let us know how we did with your support request. All feedback is appreciated 
-      to help us improve our offering!</p>
-      <form action="#">
-        <div id="ratings">
-          <label for="1">1</label>
-          <input type="radio" class="circle" id="1" name="rating" value="1"  required="required">
-          <label for="2">2</label>
-          <input type="radio" class="circle" id="2" name="rating" value="2">
-          <label for="3">3</label>
-          <input type="radio" class="circle" id="3" name="rating" value="3">
-          <label for="4">4</label>
-          <input type="radio" class="circle" id="4" name="rating" value="4">
-          <label for="5">5</label>
-          <input type="radio" class="circle" id="5" name="rating" value="5">
+  <main id="rating-panel">  
+      <div id="rating-state">
+        <div class="circle"><img alt="star-icon" id="star" src="./images/icon-star.svg"/></div>
+        <h1>How did we do?</h1>
+        <p> Please let us know how we did with your support request. All feedback is appreciated 
+        to help us improve our offering!</p>
+        <form action="#">
+          <div id="ratings">
+            <label for="1">1</label>
+            <input type="radio" class="circle" id="1" name="rating" value="1"  required="required">
+            <label for="2">2</label>
+            <input type="radio" class="circle" id="2" name="rating" value="2">
+            <label for="3">3</label>
+            <input type="radio" class="circle" id="3" name="rating" value="3">
+            <label for="4">4</label>
+            <input type="radio" class="circle" id="4" name="rating" value="4">
+            <label for="5">5</label>
+            <input type="radio" class="circle" id="5" name="rating" value="5">
+          </div>
+          <input type="submit" id="submit" value="submit" > 
+        </form>
+      </div>
+      <div id="thank-you-state">
+        <h2>Average rating</h2>
+        <div id="average-rating">
+          <i class="fa-solid fa-beat fa-star fa-xl" style="color: hsl(25, 97%, 53%);"></i>
+          <i class="fa-regular fa-star fa-xl " style="color: #fb7413;"></i>
+          <i class="fa-regular fa-star fa-xl" style="color: #fb7413;"></i>
+          <i class="fa-regular fa-star fa-xl" style="color: #fb7413;"></i>
+          <i class="fa-regular fa-star fa-xl" style="color: #fb7413;"></i>
         </div>
-        <input type="submit" id="submit" value="submit" > 
-      </form>
-    </div>
-    <div id="thank-you-state">
-      <img alt="thank-you-image" id="thank-you-image" src="./images/illustration-thank-you.svg">
-        <p id="rating-text"> You selected 0 out of 5</p>
-        <h1>Thank you!</h1>
-        <p> We appreciate you taking the time to give a rating. If you ever need more support, don’t hesitate to get in touch! </p>  
-    </div>
-  </div>
-</main>
-<script>
-  const submit = document.querySelector('#submit');
-  const ratingForm = document.querySelector('form');
-  const ratingState = document.querySelector('#rating-state')
-  const thankYouState = document.querySelector('#thank-you-state')
-  const ratingText = document.querySelector('#rating-text')
-  let radioButtons = document.querySelectorAll('input[type="radio"]')
-  let rating
-
-  radioButtons.forEach(btn => {
-    btn.checked = false
-  });
-
-  function updateRating(e) {
-    rating = e.target.value;
-  }
-
-  function handleSubmit(e) { 
-    e.preventDefault()
-    if (rating != undefined) {
-      ratingState.style.display = "none"
-      thankYouState.style.display = "flex"
-      ratingText.innerHTML = `You selected ${rating} out of 5`
-    }
-  }
-
-  ratingForm.addEventListener("submit", handleSubmit)
-  ratingForm.addEventListener("input", updateRating)
-</script>  
+        <img alt="thank-you-image" id="thank-you-image" src="./images/illustration-thank-you.svg">
+          <p id="rating-text"> You selected 0 out of 5</p>
+          <h1>Thank you!</h1>
+          <p id="thank-you-message"> We appreciate you taking the time to give a rating. If you ever need more support, don’t hesitate to get in touch! </p>  
+      </div>
+  </main>
+<script src="script.js"></script>  
 </body>
 </html>
