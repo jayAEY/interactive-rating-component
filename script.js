@@ -6,7 +6,7 @@ const ratingText = document.querySelector('#rating-text')
 const radioButtons = document.querySelectorAll('input[type="radio"]')
 const stars = document.querySelectorAll(".fa-star")
 let rating
-let averageRating = 5
+let averageRating = 1
 
 radioButtons.forEach(btn => {
   btn.checked = false
@@ -26,9 +26,10 @@ function handleSubmit(e) {
 }
 
 function handleAverage() {
-    console.log([...stars][2])
-    // stars.map((e) => console.log(e))
-//  console.log(stars[1].classList.add("fa-solid", "fa-beat"))
+    [...stars].map((e,i) =>{
+        i < averageRating ? e.classList.add("fa-solid", "fa-beat") : null
+    })
+
 }
 
 
